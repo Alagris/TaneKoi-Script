@@ -78,3 +78,5 @@ There are certain special built-in states that you can use
   - Wait here - if NPC is following you
   - Stop following me - if NPC is following you
   - Come with me again - if the NPC was waiting for you
+  - 
+- any state that starts with AUTO_ (for example AUTO_MY_CUSTOM_STATE) will work like a combination of AUTO and a custom state. This means that all the automatic responses will be generated plus additionally you can also add your own responses and set up your own text that NPC should say. 
