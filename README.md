@@ -73,7 +73,7 @@ Some side effects that I will try to implement soon:
 
 There are certain special built-in states that you can use
 
-- AUTO is the default state that automatically generates options based on the current NPC's state. For example if the NPC is friendly you can tell them to follow you. If you choose that option and then enter dialogue again, you will see an option to tell the NPC to stop following you. Currently AUTO will generate the following options:
+- AUTO is the default state that automatically generates options based on the current NPC's state. For example if the NPC is friendly you can tell them to follow you. If you choose that option and then enter dialogue again, you will see an option to tell the NPC to stop following you. The AUTO state does not have any fixed dialogue that the NPC says. Instead it is based on the NPCs mood, personality and other stats. Currently AUTO will generate the following options:
   - Follow me - if NPC is friendly and not following you
   - Wait here - if NPC is following you
   - Stop following me - if NPC is following you
