@@ -42,6 +42,8 @@ The side effects currently implemented:
     * EXCHANGE
     * FOLLOW
     * STOP_FOLLOWING
+    * WAIT
+    * STOP_WAITING
     * GIVE ITEM_ID:QUANTITY
     * GIVE_TO_NPC ITEM_ID:QUANTITY
     * SET FLAG_ID 
@@ -54,9 +56,10 @@ The side effects are quite self explanatory.
 - TRADE allows you to trade with an NPC for money.
 - EXCHANGE allows you to just freely exchange items without paying.
 - FOLLOW makes the NPC follow the player.
-- STOP_FOLLOWING makes the NPC stop being a follower.
+- STOP_FOLLOWING makes the NPC stop being a follower and go back to roaming around.
 - SET sets an arbitrary flag. You can just make up whatever flags you need
-
+- WAIT causes the NPC to wait in the current location
+- STOP_WAITING the NPC stops waiting and goes back to doing whatever it wants
 Some side effects that I will try to implement soon:
 
 - PLAY ANIMATION_ID  (this includes sex scenes)
