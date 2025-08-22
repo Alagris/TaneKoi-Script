@@ -32,7 +32,7 @@ SOME_STATE
 
     - This is the first variant for the second response
     - This is the second variant for the second response  
-      The full text for the second response. If the response doesn't transition into any new state (or none of the conditions matched), the dialogue remains in the same state.
+      The full text for the second response. If the response doesn't transition into any new state (or none of the conditions matched), the dialogue ends.
 ```
 
 The side effects currently implemented:
@@ -60,6 +60,8 @@ The side effects are quite self explanatory.
 - SET sets an arbitrary flag. You can just make up whatever flags you need
 - WAIT causes the NPC to wait in the current location
 - STOP_WAITING the NPC stops waiting and goes back to doing whatever it wants
+- BREAK_DIALOGUE quits the dialogue. You can also quit if you don't specify any state to transition to
+
 Some side effects that I will try to implement soon:
 
 - PLAY ANIMATION_ID  (this includes sex scenes)
@@ -68,3 +70,11 @@ Some side effects that I will try to implement soon:
 - TURN_FRIENDLY TEAM_NUMBER  (will be hostile towards characters of this team)
 - SET_TEAM TEAM_NUMBER (two NPCs on the same team cannot hurt each other or by hurt be player in the same team)
 - SET_STATE DIALOGUE_STATE (each NPC has a dialogue state. This will assign that state to the current NPC)
+
+There are certain special built-in states that you can use
+
+- AUTO is the default state that automatically generates options based on the current NPC's state. For example if the NPC is friendly you can tell them to follow you. If you choose that option and then enter dialogue again, you will see an option to tell the NPC to stop following you. Currently AUTO will generate the following options:
+  - Follow me - if NPC is friendly and not following you
+  - Wait here - if NPC is following you
+  - Stop following me - if NPC is following you
+  - Come with me again - if the NPC was waiting for you
